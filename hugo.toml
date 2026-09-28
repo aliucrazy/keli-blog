@@ -1,0 +1,44 @@
+baseurl = "https://aliucrazy.github.io/keli-blog/"
+DefaultContentLanguage = "zh-cn"
+title = "克礼的博客"
+# Using theme as git submodule
+theme = "beautifulhugo"
+pygmentsStyle = "trac"
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+enableRobotsTXT = true
+
+[outputs]
+    home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[languages]
+  [languages.zh-cn]
+    languageName = "中文"
+    weight = 1
+    title = "克礼的博客"
+
+[Params]
+  homeTitle = "克礼的博客"
+  tableOfContents = true
+  subtitle = "算法评测 · Agent 工程 · 读书笔记"
+  mainSections = ["post", "posts"]
+  dateFormat = "2006-01-02"
+  commit = false
+  rss = true
+  comments = false
+  readingTime = true
+  wordCount = true
+  useHLJS = true
+  socialShare = true
+  showRelatedPosts = true
+  hideAuthor = true

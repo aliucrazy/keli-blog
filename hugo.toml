@@ -42,3 +42,8 @@ enableRobotsTXT = true
   socialShare = true
   showRelatedPosts = true
   hideAuthor = true
+
+[[menu.main]]
+  name = "作品集"
+  url = "/about/"
+  weight = 20

@@ -1,4 +1,4 @@
-baseurl = "https://aliucrazy.github.io/keli-blog/"
+baseurl = "https://aliucrazy.com/"
 DefaultContentLanguage = "zh-cn"
 title = "克礼的博客"
 # Using theme as git submodule

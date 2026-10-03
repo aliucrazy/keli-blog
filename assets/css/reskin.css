@@ -232,6 +232,7 @@ footer .theme-by { display: none; }
   background: transparent; padding: 6px 0 6px 22px; font-size: 15.5px;
 }
 .blog-post hr { border-top: 1px solid var(--line); }
+.blog-post img { height: auto; }
 .blog-post table { border-color: var(--line); }
 .blog-post th { border-bottom: 2px solid var(--ink); }
 .blog-post td, .blog-post th { border-top: 1px solid var(--line); }

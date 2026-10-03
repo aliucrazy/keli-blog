@@ -200,6 +200,8 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
 footer .container { padding-top: 36px; padding-bottom: 36px; text-align: center; }
 footer .credits { color: var(--faint); font-size: 13px; }
 footer .credits a { color: var(--muted); }
+/* 页脚 powered-by 署名行不展示 */
+footer .theme-by { display: none; }
 
 /* ---------- 列表页（/post/） ---------- */
 .header-section { padding: 34px 0 4px; }

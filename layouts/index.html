@@ -1,0 +1,51 @@
+{{ define "header" }}<!-- 首页 hero 自带标题，不渲染主题默认横幅 -->{{ end }}
+{{ define "main" }}
+
+<section class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">你好，我是克礼</p>
+    <h1 class="hero-title">评测 × 生产，<br>是一条路。</h1>
+    <p class="hero-sub">算法评测工程师，生产级评测的实战派。<br>把英文前沿做「翻译 + 实战化」的人。</p>
+    <div class="hero-ctas">
+      <a class="btn btn-solid" href="{{ "post/" | relLangURL }}">读最新文章 →</a>
+      <a class="btn btn-ghost" href="{{ "about/" | relLangURL }}">作品集</a>
+    </div>
+  </div>
+  <div class="hero-card" aria-hidden="true">
+    <div class="hero-card-inner">
+      <span class="hero-card-label">THESIS</span>
+      <p class="hero-card-big">生产暴露真问题<br>→ 评测 → 改进<br>→ 上线验证</p>
+      <span class="hero-card-foot">评测 × 生产 · 实战派</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div>
+      <p class="section-label">WRITING</p>
+      <h2 class="section-title">最新文章</h2>
+    </div>
+    <a class="section-more" href="{{ "post/" | relLangURL }}">全部文章 →</a>
+  </div>
+  <div class="posts-on-home">
+    {{ range first 5 ((where .Site.RegularPages "Section" "post").ByDate.Reverse) }}
+    <a class="post-card" href="{{ .RelPermalink }}">
+      <h3>{{ .Title }}</h3>
+      {{ with .Params.subtitle }}<p>{{ . }}</p>{{ else }}<p>{{ .Summary | plainify | truncate 120 }}</p>{{ end }}
+      <span class="meta">{{ .Date.Format "2006-01-02" }} · 约 {{ .ReadingTime }} 分钟</span>
+    </a>
+    {{ end }}
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>有想法，聊聊看。</h2>
+  <p>在 X 上找我，或者先看看作品集。</p>
+  <div class="hero-ctas">
+    <a class="btn btn-solid" href="{{ "about/" | relLangURL }}">作品集 →</a>
+    <a class="btn btn-ghost" href="{{ "index.xml" | relLangURL }}">RSS 订阅</a>
+  </div>
+</section>
+
+{{ end }}

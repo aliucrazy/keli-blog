@@ -1,0 +1,33 @@
+{{/* reskin: 悬浮胶囊导航（替代主题的 Bootstrap 导航栏） */}}
+<nav class="pill-nav" aria-label="主导航">
+  <a class="pill-brand" href="{{ "" | relLangURL }}">{{ .Site.Params.homeTitle | default .Site.Title }}</a>
+  <div class="pill-links" id="pill-links">
+    <a class="pill-link{{ if .IsHome }} active{{ end }}" href="{{ "" | relLangURL }}">首页</a>
+    <a class="pill-link{{ if eq .Section "post" }} active{{ end }}" href="{{ "post/" | relLangURL }}">文章</a>
+    <a class="pill-link{{ if eq .RelPermalink ("about/" | relLangURL) }} active{{ end }}" href="{{ "about/" | relLangURL }}">作品集</a>
+  </div>
+  {{ if eq ($.Param "colorScheme" | default "auto") "auto" }}
+  <button class="pill-toggle" id="theme-toggle" aria-label="切换深色模式" title="切换深色模式">
+    <span class="fas fa-circle-half-stroke" id="theme-icon-auto"></span>
+    <span class="fas fa-sun" id="theme-icon-light" style="display: none;"></span>
+    <span class="fas fa-moon" id="theme-icon-dark" style="display: none;"></span>
+  </button>
+  {{ end }}
+  <button class="pill-toggle pill-menu-btn" id="pill-menu-btn" aria-label="菜单" aria-expanded="false">
+    <span class="fas fa-bars"></span>
+  </button>
+</nav>
+<script>
+(function () {
+  var btn = document.getElementById('pill-menu-btn');
+  var links = document.getElementById('pill-links');
+  if (!btn || !links) return;
+  btn.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function (e) {
+    if (e.target.closest('a')) links.classList.remove('open');
+  });
+})();
+</script>

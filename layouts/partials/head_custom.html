@@ -1,0 +1,6 @@
+{{/* reskin: 注入黑白极简样式（主题 CSS 之后加载，覆盖生效） */}}
+{{ $reskin := resources.Get "css/reskin.css" }}
+{{ with $reskin }}
+  {{ $reskin = . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $reskin.RelPermalink }}" integrity="{{ $reskin.Data.Integrity }}" crossorigin="anonymous">
+{{ end }}

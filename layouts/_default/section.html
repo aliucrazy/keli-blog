@@ -1,0 +1,18 @@
+{{ define "header" }}<!-- section 页用自带极简头，不渲染主题横幅 -->{{ end }}
+{{ define "main" }}
+<section class="section">
+  <p class="section-label">WRITING</p>
+  <h1 class="section-title" style="font-size: clamp(30px, 4vw, 40px);">{{ .Title }}</h1>
+  <div class="posts-on-home" style="margin-top: 12px;">
+    {{ $pag := partial "func/paginate.html" . }}
+    {{ range $pag.Pages }}
+    <a class="post-card" href="{{ .RelPermalink }}">
+      <h3>{{ .Title }}</h3>
+      {{ with .Params.subtitle }}<p>{{ . }}</p>{{ else }}<p>{{ .Summary | plainify | truncate 140 }}</p>{{ end }}
+      <span class="meta">{{ .Date.Format "2006-01-02" }} · 约 {{ .ReadingTime }} 分钟</span>
+    </a>
+    {{ end }}
+  </div>
+  {{ partial "paginator.html" . }}
+</section>
+{{ end }}

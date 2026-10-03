@@ -233,6 +233,7 @@ footer .theme-by { display: none; }
 }
 .blog-post hr { border-top: 1px solid var(--line); }
 .blog-post img { height: auto; }
+.blog-post table { display: block; max-width: 100%; overflow-x: auto; }
 .blog-post table { border-color: var(--line); }
 .blog-post th { border-bottom: 2px solid var(--ink); }
 .blog-post td, .blog-post th { border-top: 1px solid var(--line); }

@@ -267,3 +267,5 @@ footer .theme-by { display: none; }
 .wechat-qr { width: 168px; height: auto; border: 1px solid var(--line); border-radius: 12px; margin: 4px 0 28px; }
 .rss-line { margin-top: 26px !important; font-size: 13px !important; }
 .rss-line a { color: var(--faint); }
+.author-tag a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+.author-tag a:hover { color: var(--ink); }

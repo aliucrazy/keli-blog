@@ -1,0 +1,17 @@
+{{/* 文末作者卡片：仅文章页展示，承接"读完即走"的流量 */}}
+{{ if eq .Section "post" }}
+<aside class="author-card" aria-label="关于作者">
+  <div class="author-card-top">
+    <span class="author-avatar" aria-hidden="true">克</span>
+    <div class="author-id">
+      <p class="author-name">克礼</p>
+      <p class="author-tag">生产级评测的实战派</p>
+    </div>
+  </div>
+  <p class="author-bio">评测 × 生产是一条路：生产暴露真问题 → 评测变成可复现的 case → 改进 → 上线验证。这篇对你有用，欢迎加微信聊聊。</p>
+  <div class="author-wechat">
+    <img src="{{ "img/wechat-qr.png" | relURL }}" alt="克礼的微信二维码" width="168" height="168" loading="lazy">
+    <p class="author-wechat-note">扫码加微信<span>请备注：博客 + 你现在做的方向</span></p>
+  </div>
+</aside>
+{{ end }}

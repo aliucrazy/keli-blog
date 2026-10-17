@@ -249,3 +249,21 @@ footer .theme-by { display: none; }
 
 /* 关于页同样走正文排版 */
 .page-content p, .page-content li { line-height: 1.9; }
+
+/* ---------- 文末作者卡片（after_content 钩子） ---------- */
+.author-card { margin: 56px 0 8px; padding: 28px; border: 1px solid var(--line); border-radius: 18px; }
+.author-card-top { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
+.author-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--ink); color: var(--bg); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; flex: none; }
+.author-name { margin: 0; font-weight: 800; font-size: 17px; }
+.author-tag { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+.author-bio { color: var(--muted); font-size: 15px; line-height: 1.8; margin: 0 0 20px; }
+.author-wechat { display: flex; align-items: center; gap: 20px; padding-top: 20px; border-top: 1px dashed var(--line); }
+.author-wechat img { width: 132px; height: auto; border-radius: 8px; border: 1px solid var(--line); }
+.author-wechat-note { margin: 0; font-size: 15px; font-weight: 700; }
+.author-wechat-note span { display: block; margin-top: 6px; font-weight: 400; font-size: 13px; color: var(--faint); }
+@media (max-width: 560px) { .author-wechat { flex-direction: column; align-items: flex-start; } }
+
+/* ---------- 首页联系区 ---------- */
+.wechat-qr { width: 168px; height: auto; border: 1px solid var(--line); border-radius: 12px; margin: 4px 0 28px; }
+.rss-line { margin-top: 26px !important; font-size: 13px !important; }
+.rss-line a { color: var(--faint); }

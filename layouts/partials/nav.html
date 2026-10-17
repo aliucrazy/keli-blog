@@ -5,6 +5,7 @@
     <a class="pill-link{{ if .IsHome }} active{{ end }}" href="{{ "" | relLangURL }}">首页</a>
     <a class="pill-link{{ if eq .Section "post" }} active{{ end }}" href="{{ "post/" | relLangURL }}">文章</a>
     <a class="pill-link{{ if eq .RelPermalink ("about/" | relLangURL) }} active{{ end }}" href="{{ "about/" | relLangURL }}">作品集</a>
+    <a class="pill-link{{ if eq .RelPermalink ("sites/" | relLangURL) }} active{{ end }}" href="{{ "sites/" | relLangURL }}"{{ if eq .RelPermalink ("sites/" | relLangURL) }} aria-current="page"{{ end }}>站点导航</a>
   </div>
   {{ if eq ($.Param "colorScheme" | default "auto") "auto" }}
   <button class="pill-toggle" id="theme-toggle" aria-label="切换深色模式" title="切换深色模式">
@@ -27,7 +28,10 @@
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
   links.addEventListener('click', function (e) {
-    if (e.target.closest('a')) links.classList.remove('open');
+    if (e.target.closest('a')) {
+      links.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
   });
 })();
 </script>

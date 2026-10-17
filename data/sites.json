@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "sites": [
+    {
+      "id": "blog",
+      "name": "克礼的博客",
+      "url": "https://aliucrazy.com/",
+      "domain": "aliucrazy.com",
+      "description": "算法评测、Agent 工程与读书笔记。把研究和生产中的思考，整理成可复用的实践。",
+      "repository": "https://github.com/aliucrazy/keli-blog",
+      "branch": "main",
+      "hosting": "GitHub Pages",
+      "publishing": "GitHub Actions · Hugo",
+      "actions_url": "https://github.com/aliucrazy/keli-blog/actions",
+      "settings_url": "https://github.com/aliucrazy/keli-blog/settings/pages"
+    },
+    {
+      "id": "gift",
+      "name": "THE QGM CLUB · 定制日历",
+      "url": "https://gift.aliucrazy.com/",
+      "domain": "gift.aliucrazy.com",
+      "description": "把宠物、恋人、家人和朋友的照片，做成一本只属于你的 2027 定制日历。",
+      "repository": "https://github.com/aliucrazy/gift",
+      "branch": "main",
+      "hosting": "GitHub Pages",
+      "publishing": "静态 HTML",
+      "actions_url": "https://github.com/aliucrazy/gift/actions",
+      "settings_url": "https://github.com/aliucrazy/gift/settings/pages"
+    }
+  ]
+}

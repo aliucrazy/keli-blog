@@ -1,0 +1,31 @@
+<div class="site-directory">
+  {{ range $index, $site := hugo.Data.sites.sites }}
+  <article class="directory-entry" aria-labelledby="directory-{{ .id }}">
+    <p class="directory-domain"><span aria-hidden="true">{{ printf "%02d" (add $index 1) }} / </span>{{ .domain }}</p>
+    <h2 id="directory-{{ .id }}">{{ .name }}</h2>
+    <p class="directory-description">{{ .description }}</p>
+    <p><a class="directory-visit" href="{{ .url }}">访问站点 <span aria-hidden="true">↗</span></a></p>
+    <details class="directory-management">
+      <summary>源码与发布管理</summary>
+      <p>{{ .hosting }} · {{ .publishing }} · {{ .branch }} 分支</p>
+      <ul>
+        <li><a href="{{ .repository }}">源码仓库</a></li>
+        <li><a href="{{ .actions_url }}">部署记录</a></li>
+        <li><a href="{{ .settings_url }}">Pages 发布设置</a>（需要仓库管理权限）</li>
+      </ul>
+    </details>
+  </article>
+  {{ end }}
+</div>
+<style>
+.site-directory { margin-top: 2.5rem; }
+.site-directory .directory-entry { border-top: 1px solid var(--line); padding: 32px 0; }
+.site-directory .directory-domain { color: var(--muted); font: 13px/1.7 ui-monospace, monospace; overflow-wrap: anywhere; }
+.site-directory .directory-entry h2 { margin: 12px 0 16px; font-size: clamp(24px, 4vw, 32px); }
+.site-directory .directory-description { max-width: 42em; }
+.site-directory .directory-visit { display: inline-block; padding: 10px 0; font-weight: 700; }
+.site-directory .directory-management { margin-top: 16px; color: var(--muted); }
+.site-directory summary { cursor: pointer; padding: 10px 0; font-size: 14px; }
+.site-directory .directory-management p, .site-directory .directory-management li { font-size: 14px; }
+.site-directory a:focus-visible, .site-directory summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; border-radius: 2px; }
+</style>

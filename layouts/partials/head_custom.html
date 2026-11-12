@@ -4,3 +4,16 @@
   {{ $reskin = . | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $reskin.RelPermalink }}" integrity="{{ $reskin.Data.Integrity }}" crossorigin="anonymous">
 {{ end }}
+{{/* SEO 补缺：主题的 opengraph 不给 og:description 和分享图，首页也不给描述。
+     canonical 与文章页 description 由主题的 seo/main.html 输出，这里不重复。 */}}
+{{ $desc := "" }}
+{{ with .Description }}{{ $desc = . }}{{ else }}{{ with .Params.subtitle }}{{ $desc = . }}{{ else }}{{ with .Summary }}{{ $desc = . | plainify | truncate 160 }}{{ end }}{{ end }}{{ end }}
+{{ if and (not $desc) .IsHome }}{{ $desc = site.Params.subtitle }}{{ end }}
+{{ $img := site.Params.ogImage | default "/img/og-default.png" | absURL }}
+{{ with .Params.image }}{{ $img = . | absURL }}{{ end }}
+{{ if not .IsPage }}<meta name="description" content="{{ $desc }}">
+<meta property="og:description" content="{{ $desc }}">{{ end }}
+<meta property="og:image" content="{{ $img }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="{{ $img }}">
